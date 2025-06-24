@@ -1,11 +1,8 @@
 
--- ============================
--- MODELO COMPLETO - SISTEMA DE RESERVAS DE ALBERGUE
--- ============================
 
--- ----------------------------
+-- MODELO COMPLETO - SISTEMA DE RESERVAS DE ALBERGUE
+
 -- TABELAS
--- ----------------------------
 
 -- Cliente
 CREATE TABLE Cliente (
@@ -91,9 +88,8 @@ CREATE TABLE Reserva_Quarto (
   FOREIGN KEY (id_quarto) REFERENCES Quarto(id_quarto)
 );
 
--- ----------------------------
+
 -- INSERTS DE EXEMPLO
--- ----------------------------
 
 -- Clientes
 INSERT INTO Cliente (nome, email) VALUES
@@ -150,9 +146,7 @@ INSERT INTO Reserva_Vaga (id_reserva, id_vaga) VALUES
 INSERT INTO Reserva_Quarto (id_reserva, id_quarto) VALUES
 (2, 2);
 
--- ----------------------------
 -- SELECTs DE TESTE
--- ----------------------------
 
 -- Vagas reservadas por cliente
 SELECT c.nome, v.identificacao_local, r.data_inicio
@@ -171,9 +165,7 @@ JOIN Vaga_Peculiaridade vp ON v.id_vaga = vp.id_vaga
 JOIN Peculiaridade p ON vp.id_peculiaridade = p.id_peculiaridade
 WHERE v.id_vaga = 1;
 
--- ----------------------------
 -- UPDATE / DELETE EXEMPLOS
--- ----------------------------
 
 UPDATE Cliente
 SET email = 'ana_clara@gmail.com'
