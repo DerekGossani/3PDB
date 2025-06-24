@@ -1,11 +1,8 @@
 
--- ============================
--- MODELO COMPLETO - SISTEMA DE RESERVAS DE ALBERGUE
--- ============================
 
--- ----------------------------
+-- SISTEMA DE RESERVAS DE ALBERGUE
+
 -- TABELAS
--- ----------------------------
 
 -- Cliente
 CREATE TABLE Cliente (
@@ -91,9 +88,8 @@ CREATE TABLE Reserva_Quarto (
   FOREIGN KEY (id_quarto) REFERENCES Quarto(id_quarto)
 );
 
--- ----------------------------
+
 -- INSERTS DE EXEMPLO
--- ----------------------------
 
 -- Clientes
 INSERT INTO Cliente (nome, email) VALUES
@@ -150,9 +146,8 @@ INSERT INTO Reserva_Vaga (id_reserva, id_vaga) VALUES
 INSERT INTO Reserva_Quarto (id_reserva, id_quarto) VALUES
 (2, 2);
 
--- ----------------------------
+
 -- SELECTs DE TESTE
--- ----------------------------
 
 -- Vagas reservadas por cliente
 SELECT c.nome, v.identificacao_local, r.data_inicio
@@ -186,9 +181,7 @@ DELETE FROM Cliente
 WHERE id_cliente = 2;
 
 
--- ----------------------------
--- TÓPICO 5 - VAGAS DISPONÍVEIS E RESERVADAS NO DIA
--- ----------------------------
+-- VAGAS DISPONÍVEIS E RESERVADAS NO DIA
 
 -- Vagas reservadas em um determinado dia
 SELECT 
